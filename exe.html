@@ -9,15 +9,22 @@
     <link href="./exe.css" rel="stylesheet">
 </head>
 
-<body>
+<body onclick="tab.listHide(true)">
     <div id='chatExe'>
+        <!-- 右键菜单 -->
+        <div id="menu" >
+            <a id="asu">编辑</a>
+            <a id="agd" onclick="tab.deleteDom(event)">删除</a>
+            <a id="abt">上移</a>
+            <a id="abb">下移</a>
+        </div>
         <!-- 最右侧菜单栏-->
         <div class="exe-menu">
             <div>
                 <img class="menu-head" src="./asstes/test.png">
                 <div class="menu-online"></div>
                 <div class="menu-icon-top">
-                    <i class="iconfont icon-xiaoxi icon icon-action fsize32"></i>
+                    <i class="-iconfont icon-xiaoxi icon icon-action fsize32"></i>
                 </div>
                 <div class="menu-icon-top">
                     <i class="iconfont icon-shoujidiannao icon fsize32"></i>
@@ -43,7 +50,7 @@
         </div>
         <!-- 右侧聊天记录、聊天对象-->
         <div class="exe-keep">
-            <div class="tab">
+            <div class="tab fg1">
                 <div class="tab-switch">
                     <div class="tab-one switch-action">
                         <i class="iconfont icon-xiaoxi fsize25"></i>
@@ -53,7 +60,7 @@
                     </div>
                 </div>
                 <div class="tab-content">
-                    <div class="tab-content-list">
+                    <div oncontextmenu="tab.list(event)" class="tab-content-list">
                         <div>
                             <i class="iconfont icon-shouji"></i>
                             <span>莆田4</span>
@@ -62,7 +69,7 @@
                             <span class="content-list-time">09:45</span>
                         </div>
                     </div>
-                    <div class="tab-content-list">
+                    <div oncontextmenu="tab.list(event)" class="tab-content-list">
                         <div>
                             <i class="iconfont icon-diannao"></i>
                             <span>杭州</span>
@@ -71,7 +78,7 @@
                             <span class="content-list-time">09:45</span>
                         </div>
                     </div>
-                    <div class="tab-content-list">
+                    <div oncontextmenu="tab.list(event)" class="tab-content-list">
                         <div>
                             <i class="iconfont icon-baidu1"></i>
                             <span>重庆</span>
@@ -138,6 +145,7 @@
                                 <label>消息记录</label>
                             </span>
                         </div>
+                        <div class="sumbit-input" contenteditable="true" ></div>
                         <div class="sumbit-bottom">
                             <div>
                                 <input type="checkbox" />
@@ -152,7 +160,7 @@
                 </div>
                 <div class="exe-info">
                     <div class="tab fGrow1 one">
-                        <div class="tab-switch height10">
+                        <div class="tab-switch height10 height50">
                             <div class="tab-one switch-action">访客信息</div>
                             <div class="tab-two">查看轨迹</div>
                         </div>
@@ -167,7 +175,7 @@
                         </div>
                     </div>
                     <div class="tab fGrow1 two">
-                        <div class="tab-switch height10">
+                        <div class="tab-switch height10 height50">
                             <div class="tab-one switch-action">常用语</div>
                             <div class="tab-two">常用文件</div>
                         </div>
@@ -183,6 +191,6 @@
             </div>
         </div>
     </div>
+    <script src="exe.js"></script>
 </body>
-
 </html>
